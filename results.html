@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Тури в Туреччину — TravelGo</title>
+  <meta name="description" content="Знайдено 24 тури в Туреччину на 12–19 липня. Готелі 5 зірок, все включено, найкращі ціни.">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-tg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="TravelGo — на головну">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21.6 2.4 2.9 9.2c-.7.3-.7 1.3 0 1.6l6 2.3 2.3 6c.3.7 1.3.7 1.6 0l8.8-18.7c.3-.6-.4-1.2-1-1z" fill="#2563EB"/>
+          <path d="m8.9 13.1 8.6-8.6" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/>
+        </svg>
+        <span>TravelGo</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Відкрити меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav tg-main-nav me-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="results.html">Тури</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#destinations">Напрямки</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#why">Про нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contacts">Контакти</a></li>
+        </ul>
+        <div class="tg-auth d-flex align-items-center">
+          <div class="dropdown">
+            <button class="tg-lang dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              UA <i class="bi bi-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item active" href="#">Українська</a></li>
+              <li><a class="dropdown-item" href="#">English</a></li>
+            </ul>
+          </div>
+          <a class="btn-login" href="#">Увійти</a>
+          <a class="btn-signup" href="#">Реєстрація</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="results-page">
+    <div class="container">
+      <div class="page-head d-flex flex-wrap align-items-end justify-content-between gap-3">
+        <div>
+          <h1 class="page-title">Тури в Туреччину</h1>
+          <p class="page-sub">Знайдено 24 тури · 12–19 липня · 2 дорослих · 7 ночей</p>
+        </div>
+        <label>
+          <span class="visually-hidden">Сортування турів</span>
+          <select class="tg-select form-select" aria-label="Сортування турів">
+            <option selected>Сортування: за ціною</option>
+            <option>Сортування: за рейтингом</option>
+            <option>Сортування: за популярністю</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="results-layout">
+        <aside class="filters-card" aria-label="Фільтри турів">
+          <form id="filtersForm">
+            <h2 class="filters-title">Фільтри</h2>
+
+            <div class="filter-group">
+              <p class="filter-label">Ціна, грн</p>
+              <input class="form-range filter-range" id="priceRange" type="range" min="15000" max="40000" step="500" value="40000" aria-label="Максимальна ціна">
+              <div class="filter-range-values" id="priceRangeValue">15 000 — 40 000 грн</div>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-label">Кількість зірок</p>
+              <label class="tg-check"><input type="checkbox" name="stars" value="5" checked><span>5 зірок</span></label>
+              <label class="tg-check"><input type="checkbox" name="stars" value="4"><span>4 зірки</span></label>
+              <label class="tg-check"><input type="checkbox" name="stars" value="3"><span>3 зірки</span></label>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-label">Харчування</p>
+              <label class="tg-check"><input type="checkbox" name="meal" value="all" checked><span>Все включено</span></label>
+              <label class="tg-check"><input type="checkbox" name="meal" value="breakfast"><span>Сніданки</span></label>
+              <label class="tg-check"><input type="checkbox" name="meal" value="none"><span>Без харчування</span></label>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-label">Відстань до моря</p>
+              <label class="tg-check"><input type="checkbox" name="distance" value="100"><span>до 100 м</span></label>
+              <label class="tg-check"><input type="checkbox" name="distance" value="500" checked><span>до 500 м</span></label>
+              <label class="tg-check"><input type="checkbox" name="distance" value="1000"><span>до 1 км</span></label>
+            </div>
+
+            <div class="filter-group">
+              <p class="filter-label">Тривалість</p>
+              <label class="tg-check"><input type="checkbox" name="duration" value="7" checked><span>7 ночей</span></label>
+              <label class="tg-check"><input type="checkbox" name="duration" value="10"><span>10 ночей</span></label>
+              <label class="tg-check"><input type="checkbox" name="duration" value="14"><span>14 ночей</span></label>
+            </div>
+
+            <button class="filters-reset" id="resetFilters" type="button">Скинути фільтри</button>
+          </form>
+        </aside>
+
+        <section aria-label="Результати пошуку">
+          <div class="tours-grid">
+            <article class="tour-card">
+              <div class="tour-photo bg-rixos"><span class="photo-sun"></span></div>
+              <div class="tour-body">
+                <div class="tour-head">
+                  <h2 class="tour-name">Rixos Premium Belek</h2>
+                  <span class="rating-badge"><i class="bi bi-star-fill"></i> 4.9</span>
+                </div>
+                <p class="tour-meta">5★ · все включено · Белек</p>
+                <div class="tour-footer">
+                  <div class="tour-price">36 400 ₴</div>
+                  <a class="btn-tour" href="tour.html">Детальніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-photo bg-delphin"><span class="photo-sun"></span></div>
+              <div class="tour-body">
+                <div class="tour-head">
+                  <h2 class="tour-name">Delphin Palace</h2>
+                  <span class="rating-badge"><i class="bi bi-star-fill"></i> 4.8</span>
+                </div>
+                <p class="tour-meta">5★ · все включено · Лара</p>
+                <div class="tour-footer">
+                  <div class="tour-price">38 200 ₴</div>
+                  <a class="btn-tour" href="tour.html">Детальніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-photo bg-titanic"><span class="photo-sun"></span></div>
+              <div class="tour-body">
+                <div class="tour-head">
+                  <h2 class="tour-name">Titanic Beach Lara</h2>
+                  <span class="rating-badge"><i class="bi bi-star-fill"></i> 4.6</span>
+                </div>
+                <p class="tour-meta">4★ · все включено · Лара</p>
+                <div class="tour-footer">
+                  <div class="tour-price">39 800 ₴</div>
+                  <a class="btn-tour" href="tour.html">Детальніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-photo bg-maxx"><span class="photo-sun"></span></div>
+              <div class="tour-body">
+                <div class="tour-head">
+                  <h2 class="tour-name">Maxx Royal Belek</h2>
+                  <span class="rating-badge"><i class="bi bi-star-fill"></i> 4.9</span>
+                </div>
+                <p class="tour-meta">5★ · все включено · Белек</p>
+                <div class="tour-footer">
+                  <div class="tour-price">44 500 ₴</div>
+                  <a class="btn-tour" href="tour.html">Детальніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-photo bg-concorde"><span class="photo-sun"></span></div>
+              <div class="tour-body">
+                <div class="tour-head">
+                  <h2 class="tour-name">Concorde De Luxe</h2>
+                  <span class="rating-badge"><i class="bi bi-star-fill"></i> 4.7</span>
+                </div>
+                <p class="tour-meta">5★ · все включено · Лара</p>
+                <div class="tour-footer">
+                  <div class="tour-price">37 900 ₴</div>
+                  <a class="btn-tour" href="tour.html">Детальніше</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="tour-card">
+              <div class="tour-photo bg-adalya"><span class="photo-sun"></span></div>
+              <div class="tour-body">
+                <div class="tour-head">
+                  <h2 class="tour-name">Adalya Elite Lara</h2>
+                  <span class="rating-badge"><i class="bi bi-star-fill"></i> 4.7</span>
+                </div>
+                <p class="tour-meta">5★ · все включено · Лара</p>
+                <div class="tour-footer">
+                  <div class="tour-price">34 600 ₴</div>
+                  <a class="btn-tour" href="tour.html">Детальніше</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <nav class="tg-pagination" aria-label="Сторінки результатів">
+            <a class="page-btn nav-arrow" href="#" aria-label="Попередня сторінка">‹</a>
+            <a class="page-btn active" href="#" aria-current="page">1</a>
+            <a class="page-btn" href="#">2</a>
+            <a class="page-btn" href="#">3</a>
+            <a class="page-btn nav-arrow" href="#" aria-label="Наступна сторінка">›</a>
+          </nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="tg-footer">
+    <div class="container">
+      <p>© 2026 TravelGo · Замовлення туристичних подорожей · Телефон: <a href="tel:+380441234567">+380 44 123 45 67</a> · Email: <a href="mailto:hello@travelgo.ua">hello@travelgo.ua</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

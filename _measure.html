@@ -1,0 +1,41 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>measure</title>
+<style>html,body{margin:0}iframe{width:1440px;height:1400px;border:0}pre{font:12px monospace}</style>
+</head><body>
+<iframe id="f"></iframe>
+<pre id="out">pending</pre>
+<script>
+  const params = new URLSearchParams(location.search);
+  const page = params.get('page') || 'index';
+  const map = {
+    index: ['.navbar-tg','.hero','.hero-title','.hero-sub','.tg-search','.tg-chips','.tg-searchbar','.tg-options','.tg-option-col','.tg-option-right','.home-destinations','.home-destinations .section-title','.home-destinations .section-sub','.home-destinations .row','.dest-card','.dest-photo','.dest-body','.home-why','.home-why .section-title','.home-why .row','.feature-card','.tg-footer'],
+    results: ['.navbar-tg','.page-head','.page-title','.page-sub','.tg-select','.results-layout','.filters-card','.tours-grid','.tour-card','.tour-photo','.tour-body','.tg-pagination','.tg-footer'],
+    tour: ['.navbar-tg','.tour-page','.tg-breadcrumb','.tour-gallery','.gallery-main','.gallery-thumbs','.tour-content','.tour-main','.tour-title','.tour-sub','.tour-price','.tour-book','.tour-includes','.tour-sidebar-card','.tg-tabs','.tab-content','.tg-footer'],
+    booking: ['.navbar-tg','.booking-page','.booking-title','.tg-breadcrumb','.booking-layout','.booking-main','.section-title','.tourist-card','.payment-panel','.bank-card','.secure-col','.pay-button','.booking-summary','.summary-photo','.summary-total','.tg-footer'],
+    confirmation: ['.navbar-tg','.confirm-page','.success-ring','.success-circle','.confirm-title','.confirm-sub','.confirm-card','.confirm-actions','.tg-footer']
+  };
+  const f = document.getElementById('f');
+  f.src = page + '.html';
+  f.addEventListener('load', () => {
+    setTimeout(() => {
+      try {
+        const doc = f.contentDocument;
+        const win = f.contentWindow;
+        const r = el => { const b = el.getBoundingClientRect(); return { x: +b.x.toFixed(1), y: +(b.y + win.scrollY).toFixed(1), w: +b.width.toFixed(1), h: +b.height.toFixed(1) }; };
+        const out = { page, viewport: { w: win.innerWidth, h: win.innerHeight, scrollH: doc.documentElement.scrollHeight } };
+        out.items = {};
+        for (const sel of map[page] || []) {
+          const els = doc.querySelectorAll(sel);
+          out.items[sel] = Array.from(els).slice(0, 8).map(el => ({ ...r(el), text: (el.textContent || '').trim().slice(0, 40) }));
+        }
+        const bodyStyle = win.getComputedStyle(doc.body);
+        out.bodyFont = bodyStyle.fontFamily + ' / ' + bodyStyle.fontSize;
+        const h1 = doc.querySelector('h1');
+        if (h1) { const cs = win.getComputedStyle(h1); out.h1 = { font: cs.fontFamily, size: cs.fontSize, lh: cs.lineHeight, weight: cs.fontWeight, color: cs.color, ls: cs.letterSpacing }; }
+        document.getElementById('out').textContent = JSON.stringify(out, null, 1);
+        document.title = 'DONE';
+      } catch (e) { document.getElementById('out').textContent = 'ERR ' + e.message; document.title = 'ERR'; }
+    }, 200);
+  });
+</script>
+</body></html>

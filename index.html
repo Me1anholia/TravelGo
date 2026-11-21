@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TravelGo — тури та подорожі</title>
+  <meta name="description" content="TravelGo — тури до Туреччини, Єгипту, Греції та Іспанії. Найкращі ціни, безпечна оплата та підтримка 24/7.">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-tg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html" aria-label="TravelGo — на головну">
+        <svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M21.6 2.4 2.9 9.2c-.7.3-.7 1.3 0 1.6l6 2.3 2.3 6c.3.7 1.3.7 1.6 0l8.8-18.7c.3-.6-.4-1.2-1-1z" fill="#2563EB"/>
+          <path d="m8.9 13.1 8.6-8.6" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity=".55"/>
+        </svg>
+        <span>TravelGo</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Відкрити меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav tg-main-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="results.html">Тури</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Напрямки</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why">Про нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacts">Контакти</a></li>
+        </ul>
+        <div class="tg-auth d-flex align-items-center">
+          <div class="dropdown">
+            <button class="tg-lang dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              UA <i class="bi bi-chevron-down"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item active" href="#">Українська</a></li>
+              <li><a class="dropdown-item" href="#">English</a></li>
+            </ul>
+          </div>
+          <a class="btn-login" href="#">Увійти</a>
+          <a class="btn-signup" href="#">Реєстрація</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-sun" aria-hidden="true"></div>
+      <div class="container">
+        <h1 class="hero-title">Знайдіть свою<br>ідеальну подорож</h1>
+        <p class="hero-sub">Тури до Туреччини, Єгипту, Греції та інших напрямків — з найкращими цінами та підтримкою 24/7</p>
+
+        <div class="tg-search">
+          <div class="tg-chips">
+            <div class="dropdown" data-chip-group="trip">
+              <button class="btn tg-chip tg-chip--trip dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="tg-chip-text">Туди-назад</span> <i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item active" href="#" data-value="roundtrip">Туди-назад</a></li>
+                <li><a class="dropdown-item" href="#" data-value="oneway">В один бік</a></li>
+              </ul>
+            </div>
+            <div class="dropdown" data-chip-group="baggage">
+              <button class="btn tg-chip tg-chip--bag dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="tg-chip-text">23 кг</span> <i class="bi bi-chevron-down"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-value="none">Без багажу</a></li>
+                <li><a class="dropdown-item" href="#" data-value="carryon">Ручна поклажа</a></li>
+                <li><a class="dropdown-item active" href="#" data-value="23kg">23 кг</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <form class="tg-searchbar" action="results.html" method="get">
+            <input type="hidden" name="trip_type" value="roundtrip">
+            <input type="hidden" name="baggage" value="23kg">
+
+            <!-- ЗВІДКИ -->
+            <div class="tg-field tg-field--first tg-dropdown-field" data-location-field="from">
+              <span class="tg-field-label">ЗВІДКИ</span>
+              <input class="tg-field-control" type="text" name="from" value="Україна (Київ)" readonly autocomplete="off" aria-label="Звідки">
+              <div class="tg-popover tg-location-menu">
+                <button type="button" class="tg-location-item active" data-country="Україна" data-city="Київ" data-airport="аеропорти IEV, KBP">Україна (Київ)</button>
+                <button type="button" class="tg-location-item" data-country="Польща" data-city="Варшава" data-airport="аеропорти WAW, WMI">Польща (Варшава)</button>
+                <button type="button" class="tg-location-item" data-country="Німеччина" data-city="Берлін" data-airport="аеропорт BER">Німеччина (Берлін)</button>
+                <button type="button" class="tg-location-item" data-country="Молдова" data-city="Кишинів" data-airport="аеропорт RMO">Молдова (Кишинів)</button>
+                <button type="button" class="tg-location-item" data-country="Румунія" data-city="Бухарест" data-airport="аеропорт OTP">Румунія (Бухарест)</button>
+              </div>
+            </div>
+
+            <span class="tg-search-divider" aria-hidden="true"></span>
+
+            <!-- КУДИ -->
+            <div class="tg-field tg-dropdown-field" data-location-field="to">
+              <span class="tg-field-label">КУДИ</span>
+              <input class="tg-field-control" type="text" name="to" value="Туреччина" readonly autocomplete="off" aria-label="Куди">
+              <div class="tg-popover tg-location-menu">
+                <button type="button" class="tg-location-item active" data-country="Туреччина" data-airport="аеропорти AYT, DLM">Туреччина</button>
+                <button type="button" class="tg-location-item" data-country="Єгипет" data-airport="аеропорти HRG, SSH">Єгипет</button>
+                <button type="button" class="tg-location-item" data-country="Греція" data-airport="аеропорти HER, RHO">Греція</button>
+                <button type="button" class="tg-location-item" data-country="Іспанія" data-airport="аеропорти PMI, BCN">Іспанія</button>
+                <button type="button" class="tg-location-item" data-country="Болгарія" data-airport="аеропорти BOJ, VAR">Болгарія</button>
+                <button type="button" class="tg-location-item" data-country="Чорногорія" data-airport="аеропорти TIV, TGD">Чорногорія</button>
+              </div>
+            </div>
+
+            <span class="tg-search-divider" aria-hidden="true"></span>
+
+            <!-- ДАТИ -->
+            <div class="tg-field tg-dropdown-field" data-calendar-field>
+              <span class="tg-field-label">ДАТИ</span>
+              <input class="tg-field-control" type="text" name="dates" value="12–19 липня · 7 ночей" readonly autocomplete="off" aria-label="Дати подорожі">
+              <input type="hidden" name="date_start" value="2026-07-12">
+              <input type="hidden" name="date_end" value="2026-07-19">
+              <div class="tg-popover tg-calendar-popover" id="tgCalendarPopover"></div>
+            </div>
+
+            <span class="tg-search-divider" aria-hidden="true"></span>
+
+            <label class="tg-field">
+              <span class="tg-field-label">КІЛЬКІСТЬ ОСІБ</span>
+              <select class="tg-field-control" name="travelers" aria-label="Кількість осіб">
+                <option selected>2 дорослих</option>
+                <option>1 дорослий</option>
+                <option>2 дорослих + 1 дитина</option>
+                <option>2 дорослих + 2 дитини</option>
+              </select>
+            </label>
+            <button class="tg-search-btn" type="submit">Знайти</button>
+          </form>
+
+          <div class="tg-options">
+            <div class="tg-option-col">
+              <label class="tg-check">
+                <input type="checkbox" name="airports_from">
+                <span>Додати аеропорти поблизу</span>
+              </label>
+              <label class="tg-check">
+                <input type="checkbox" name="direct_flights">
+                <span>Прямі рейси</span>
+              </label>
+            </div>
+            <div class="tg-option-col">
+              <label class="tg-check">
+                <input type="checkbox" name="airports_to">
+                <span>Додати аеропорти поблизу</span>
+              </label>
+            </div>
+            <label class="tg-check tg-option-right">
+              <input type="checkbox" name="find_stay" checked>
+              <span>Знайти житло</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-destinations" id="destinations">
+      <div class="container">
+        <h2 class="section-title">Популярні напрямки</h2>
+        <p class="section-sub">Найбільш популярні курорти цього сезону</p>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <a class="dest-card" href="results.html">
+              <div class="dest-photo bg-turkey"><span class="photo-sun"></span></div>
+              <div class="dest-body">
+                <h3 class="dest-name">Туреччина</h3>
+                <p class="dest-meta">Анталія · 7 ночей</p>
+                <p class="dest-price">від 36 400 ₴</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a class="dest-card" href="results.html">
+              <div class="dest-photo bg-egypt"><span class="photo-sun"></span></div>
+              <div class="dest-body">
+                <h3 class="dest-name">Єгипет</h3>
+                <p class="dest-meta">Хургада · 7 ночей</p>
+                <p class="dest-price">від 31 200 ₴</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a class="dest-card" href="results.html">
+              <div class="dest-photo bg-greece"><span class="photo-sun"></span></div>
+              <div class="dest-body">
+                <h3 class="dest-name">Греція</h3>
+                <p class="dest-meta">Крит · 7 ночей</p>
+                <p class="dest-price">від 42 800 ₴</p>
+              </div>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a class="dest-card" href="results.html">
+              <div class="dest-photo bg-spain"><span class="photo-sun"></span></div>
+              <div class="dest-body">
+                <h3 class="dest-name">Іспанія</h3>
+                <p class="dest-meta">Майорка · 7 ночей</p>
+                <p class="dest-price">від 48 500 ₴</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-why" id="why">
+      <div class="container">
+        <h2 class="section-title">Чому TravelGo?</h2>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon" style="background:#2563EB"><i class="bi bi-shield-check"></i></div>
+              <div class="feature-copy">
+                <h3>Безпечна оплата</h3>
+                <p>Оплата карткою з підтвердженням у банківському застосунку. Жодних прихованих платежів.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon" style="background:#F59E0B"><i class="bi bi-headset"></i></div>
+              <div class="feature-copy">
+                <h3>Підтримка 24/7</h3>
+                <p>Наші менеджери завжди на зв’язку — до, під час і після подорожі.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-card">
+              <div class="feature-icon" style="background:#22C55E"><i class="bi bi-tags-fill"></i></div>
+              <div class="feature-copy">
+                <h3>Найкращі ціни</h3>
+                <p>Порівнюємо пропозиції десятків операторів, щоб знайти оптимальний тур.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tg-footer" id="contacts">
+    <div class="container">
+      <p>© 2026 TravelGo · Замовлення туристичних подорожей · Телефон: <a href="tel:+380441234567">+380 44 123 45 67</a> · Email: <a href="mailto:hello@travelgo.ua">hello@travelgo.ua</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/vendor/bootstrap/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
