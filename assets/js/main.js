@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- 2. Выпадающие списки стран (Звідки / Куди) и приписка аэропортов ---
+  // --- 2. Выпадающие списки стран (Звідки / Куди) и 3-буквенный код аэропорта ---
   const locationStates = {
-    from: { country: 'Україна', city: 'Київ', airport: 'аеропорти IEV, KBP' },
-    to: { country: 'Туреччина', city: '', airport: 'аеропорти AYT, DLM' }
+    from: { country: 'Україна', city: 'Київ', airport: 'IEV' },
+    to: { country: 'Туреччина', city: '', airport: 'AYT' }
   };
 
   const airportsFromCheckbox = document.querySelector('input[name="airports_from"]');
@@ -134,11 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
         ? airportsFromCheckbox?.checked
         : airportsToCheckbox?.checked;
 
-    let baseText = state.city ? `${state.country} (${state.city})` : state.country;
     if (includeAirports && state.airport) {
-      baseText += ` + ${state.airport}`;
+      input.value = `${state.country} (${state.airport})`;
+    } else {
+      input.value = state.city ? `${state.country} (${state.city})` : state.country;
     }
-    input.value = baseText;
   }
 
   document.querySelectorAll('[data-location-field]').forEach((field) => {
@@ -168,6 +168,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  if (airportsFromCheckbox) {
+    airportsFromCheckbox.addEventListener('change', () => updateLocationDisplay('from'));
+  }
+  if (airportsToCheckbox) {
+    airportsToCheckbox.addEventListener('change', () => updateLocationDisplay('to'));
+  }
+
+  // --- Стилизованный список для поля "Кількість осіб" ---
+  const travelersField = document.querySelector('[data-travelers-field]');
+  if (travelersField) {
+    const travelersInput = travelersField.querySelector('input[name="travelers"]');
+    const travelerItems = travelersField.querySelectorAll('.tg-location-item');
+
+    travelersField.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = travelersField.classList.contains('is-open');
+      closeAllPopovers();
+      if (!wasOpen) travelersField.classList.add('is-open');
+    });
+
+    travelerItems.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        travelerItems.forEach((el) => el.classList.remove('active'));
+        btn.classList.add('active');
+        travelersInput.value = btn.dataset.value || btn.textContent.trim();
+        travelersField.classList.remove('is-open');
+      });
+    });
+  }
+
+
 
   if (airportsFromCheckbox) {
     airportsFromCheckbox.addEventListener('change', () => updateLocationDisplay('from'));

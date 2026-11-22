@@ -87,11 +87,11 @@
               <span class="tg-field-label">ЗВІДКИ</span>
               <input class="tg-field-control" type="text" name="from" value="Україна (Київ)" readonly autocomplete="off" aria-label="Звідки">
               <div class="tg-popover tg-location-menu">
-                <button type="button" class="tg-location-item active" data-country="Україна" data-city="Київ" data-airport="аеропорти IEV, KBP">Україна (Київ)</button>
-                <button type="button" class="tg-location-item" data-country="Польща" data-city="Варшава" data-airport="аеропорти WAW, WMI">Польща (Варшава)</button>
-                <button type="button" class="tg-location-item" data-country="Німеччина" data-city="Берлін" data-airport="аеропорт BER">Німеччина (Берлін)</button>
-                <button type="button" class="tg-location-item" data-country="Молдова" data-city="Кишинів" data-airport="аеропорт RMO">Молдова (Кишинів)</button>
-                <button type="button" class="tg-location-item" data-country="Румунія" data-city="Бухарест" data-airport="аеропорт OTP">Румунія (Бухарест)</button>
+                <button type="button" class="tg-location-item active" data-country="Україна" data-city="Київ" data-airport="IEV">Україна (Київ)</button>
+                <button type="button" class="tg-location-item" data-country="Польща" data-city="Варшава" data-airport="WAW">Польща (Варшава)</button>
+                <button type="button" class="tg-location-item" data-country="Німеччина" data-city="Берлін" data-airport="BER">Німеччина (Берлін)</button>
+                <button type="button" class="tg-location-item" data-country="Молдова" data-city="Кишинів" data-airport="RMO">Молдова (Кишинів)</button>
+                <button type="button" class="tg-location-item" data-country="Румунія" data-city="Бухарест" data-airport="OTP">Румунія (Бухарест)</button>
               </div>
             </div>
 
@@ -102,12 +102,12 @@
               <span class="tg-field-label">КУДИ</span>
               <input class="tg-field-control" type="text" name="to" value="Туреччина" readonly autocomplete="off" aria-label="Куди">
               <div class="tg-popover tg-location-menu">
-                <button type="button" class="tg-location-item active" data-country="Туреччина" data-airport="аеропорти AYT, DLM">Туреччина</button>
-                <button type="button" class="tg-location-item" data-country="Єгипет" data-airport="аеропорти HRG, SSH">Єгипет</button>
-                <button type="button" class="tg-location-item" data-country="Греція" data-airport="аеропорти HER, RHO">Греція</button>
-                <button type="button" class="tg-location-item" data-country="Іспанія" data-airport="аеропорти PMI, BCN">Іспанія</button>
-                <button type="button" class="tg-location-item" data-country="Болгарія" data-airport="аеропорти BOJ, VAR">Болгарія</button>
-                <button type="button" class="tg-location-item" data-country="Чорногорія" data-airport="аеропорти TIV, TGD">Чорногорія</button>
+                <button type="button" class="tg-location-item active" data-country="Туреччина" data-airport="AYT">Туреччина</button>
+                <button type="button" class="tg-location-item" data-country="Єгипет" data-airport="HRG">Єгипет</button>
+                <button type="button" class="tg-location-item" data-country="Греція" data-airport="HER">Греція</button>
+                <button type="button" class="tg-location-item" data-country="Іспанія" data-airport="PMI">Іспанія</button>
+                <button type="button" class="tg-location-item" data-country="Болгарія" data-airport="BOJ">Болгарія</button>
+                <button type="button" class="tg-location-item" data-country="Чорногорія" data-airport="TIV">Чорногорія</button>
               </div>
             </div>
 
@@ -124,15 +124,21 @@
 
             <span class="tg-search-divider" aria-hidden="true"></span>
 
-            <label class="tg-field">
+            <!-- КІЛЬКІСТЬ ОСІБ (стилизованный выпадающий список) -->
+            <div class="tg-field tg-dropdown-field" data-travelers-field>
               <span class="tg-field-label">КІЛЬКІСТЬ ОСІБ</span>
-              <select class="tg-field-control" name="travelers" aria-label="Кількість осіб">
-                <option selected>2 дорослих</option>
-                <option>1 дорослий</option>
-                <option>2 дорослих + 1 дитина</option>
-                <option>2 дорослих + 2 дитини</option>
-              </select>
-            </label>
+              <div class="tg-select-wrap">
+                <input class="tg-field-control" type="text" name="travelers" value="2 дорослих" readonly autocomplete="off" aria-label="Кількість осіб">
+                <i class="bi bi-chevron-down tg-select-arrow" aria-hidden="true"></i>
+              </div>
+              <div class="tg-popover tg-location-menu">
+                <button type="button" class="tg-location-item active" data-value="2 дорослих">2 дорослих</button>
+                <button type="button" class="tg-location-item" data-value="1 дорослий">1 дорослий</button>
+                <button type="button" class="tg-location-item" data-value="2 дорослих + 1 дитина">2 дорослих + 1 дитина</button>
+                <button type="button" class="tg-location-item" data-value="2 дорослих + 2 дитини">2 дорослих + 2 дитини</button>
+              </div>
+            </div>
+
             <button class="tg-search-btn" type="submit">Знайти</button>
           </form>
 

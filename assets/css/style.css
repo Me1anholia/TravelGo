@@ -1152,3 +1152,72 @@ select.tg-field-control { cursor: pointer; appearance: none; -webkit-appearance:
   color: #64748b;
   text-align: center;
 }
+
+/* Поднимаем блок поиска и hero над следующей секцией */
+.hero {
+  position: relative;
+  z-index: 20;
+  overflow: visible !important;
+}
+
+.tg-search,
+.tg-searchbar {
+  position: relative;
+  z-index: 25;
+  overflow: visible !important;
+}
+
+.home-destinations {
+  position: relative;
+  z-index: 1;
+}
+
+/* Поля с выпадающими списками */
+.tg-dropdown-field {
+  position: relative;
+  cursor: pointer;
+}
+
+.tg-dropdown-field .tg-field-control[readonly] {
+  cursor: pointer;
+  background-color: transparent;
+  width: 100%;
+  padding-right: 4px;
+  text-overflow: clip;
+}
+
+.tg-select-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.tg-select-arrow {
+  font-size: 12px;
+  color: #64748b;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tg-dropdown-field.is-open .tg-select-arrow {
+  transform: rotate(180deg);
+}
+
+.tg-popover {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 2000;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16);
+  padding: 8px;
+  min-width: 230px;
+}
+
+.tg-dropdown-field.is-open .tg-popover {
+  display: block;
+}
