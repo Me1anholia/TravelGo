@@ -55,27 +55,36 @@
             <section class="tourist-card" aria-labelledby="tourist1Title">
               <h3 class="tourist-title" id="tourist1Title">Турист 1 (основний)</h3>
               <div class="form-grid">
-                <div class="tg-input">
-                  <label for="fullname1">ПІБ</label>
-                  <input class="tg-input-control" id="fullname1" name="fullname1" type="text" value="Андрій Коваль" autocomplete="name">
+                <div>
+                  <div class="tg-input" id="fullname1Field">
+                    <label for="fullname1">ПІБ</label>
+                    <input class="tg-input-control" id="fullname1" name="fullname1" type="text" placeholder="Андрій Коваль" autocomplete="name">
+                  </div>
+                  <p class="field-error" id="fullname1Error" hidden>Введіть прізвище та ім’я (мінімум 2 слова)</p>
                 </div>
 
                 <div>
-                  <div class="tg-input is-invalid" id="passport1Field">
+                  <div class="tg-input" id="passport1Field">
                     <label for="passport1">Номер паспорта</label>
-                    <input class="tg-input-control" id="passport1" name="passport1" type="text" value="FN 123456" autocomplete="off" aria-describedby="passport1Error" aria-invalid="true">
+                    <input class="tg-input-control" id="passport1" name="passport1" type="text" placeholder="FN123456" maxlength="9" autocomplete="off">
                   </div>
-                  <p class="field-error" id="passport1Error">Перевірте номер паспорта — має бути 8 символів</p>
+                  <p class="field-error" id="passport1Error" hidden>Введіть коректний номер паспорта (2 літери та 6 цифр)</p>
                 </div>
 
-                <div class="tg-input">
-                  <label for="phone1">Телефон</label>
-                  <input class="tg-input-control" id="phone1" name="phone1" type="tel" value="+380 67 123 45 67" autocomplete="tel">
+                <div>
+                  <div class="tg-input" id="phone1Field">
+                    <label for="phone1">Телефон</label>
+                    <input class="tg-input-control" id="phone1" name="phone1" type="tel" placeholder="+380 67 123 45 67" autocomplete="tel">
+                  </div>
+                  <p class="field-error" id="phone1Error" hidden>Введіть коректний номер телефону</p>
                 </div>
 
-                <div class="tg-input">
-                  <label for="email1">Email</label>
-                  <input class="tg-input-control" id="email1" name="email1" type="email" value="andrii@mail.com" autocomplete="email">
+                <div>
+                  <div class="tg-input" id="email1Field">
+                    <label for="email1">Email</label>
+                    <input class="tg-input-control" id="email1" name="email1" type="email" placeholder="andrii@mail.com" autocomplete="email">
+                  </div>
+                  <p class="field-error" id="email1Error" hidden>Введіть коректну електронну пошту</p>
                 </div>
               </div>
             </section>
@@ -83,24 +92,36 @@
             <section class="tourist-card" aria-labelledby="tourist2Title">
               <h3 class="tourist-title" id="tourist2Title">Турист 2 (супутниця)</h3>
               <div class="form-grid">
-                <div class="tg-input">
-                  <label for="fullname2">ПІБ</label>
-                  <input class="tg-input-control" id="fullname2" name="fullname2" type="text" value="Олена Коваль">
+                <div>
+                  <div class="tg-input" id="fullname2Field">
+                    <label for="fullname2">ПІБ</label>
+                    <input class="tg-input-control" id="fullname2" name="fullname2" type="text" placeholder="Олена Коваль">
+                  </div>
+                  <p class="field-error" id="fullname2Error" hidden>Введіть прізвище та ім’я (мінімум 2 слова)</p>
                 </div>
 
-                <div class="tg-input">
-                  <label for="passport2">Номер паспорта</label>
-                  <input class="tg-input-control" id="passport2" name="passport2" type="text" value="FN 654321">
+                <div>
+                  <div class="tg-input" id="passport2Field">
+                    <label for="passport2">Номер паспорта</label>
+                    <input class="tg-input-control" id="passport2" name="passport2" type="text" placeholder="FN654321" maxlength="9">
+                  </div>
+                  <p class="field-error" id="passport2Error" hidden>Введіть коректний номер паспорта (2 літери та 6 цифр)</p>
                 </div>
 
-                <div class="tg-input">
-                  <label for="birth2">Дата народження</label>
-                  <input class="tg-input-control" id="birth2" name="birth2" type="text" value="12.05.1992">
+                <div>
+                  <div class="tg-input" id="birth2Field">
+                    <label for="birth2">Дата народження</label>
+                    <input class="tg-input-control" id="birth2" name="birth2" type="text" placeholder="12.05.1992" maxlength="10">
+                  </div>
+                  <p class="field-error" id="birth2Error" hidden>Введіть дату у форматі ДД.ММ.РРРР</p>
                 </div>
 
-                <div class="tg-input">
-                  <label for="citizenship2">Громадянство</label>
-                  <input class="tg-input-control" id="citizenship2" name="citizenship2" type="text" value="Україна">
+                <div>
+                  <div class="tg-input" id="citizenship2Field">
+                    <label for="citizenship2">Громадянство</label>
+                    <input class="tg-input-control" id="citizenship2" name="citizenship2" type="text" placeholder="Україна">
+                  </div>
+                  <p class="field-error" id="citizenship2Error" hidden>Вкажіть громадянство</p>
                 </div>
               </div>
             </section>
@@ -108,20 +129,27 @@
             <h2 class="section-title mt-4">Оплата</h2>
 
             <div class="payment-panel">
-              <div class="bank-card" role="img" aria-label="Банківська картка Visa TravelGo, номер 4242 4242 4242 4242, власник Andriy Koval, дійсна до 09/28">
-                <div class="card-brand">TravelGo</div>
-                <div class="card-system">VISA</div>
-                <div class="card-chip" aria-hidden="true"></div>
-                <div class="card-number-label">НОМЕР КАРТКИ</div>
-                <div class="card-number">4242 4242 4242 4242</div>
-                <div class="card-holder-label">ВЛАСНИК КАРТКИ</div>
-                <div class="card-holder">ANDRIY KOVAL</div>
-                <div class="card-expiry-label">ДІЙСНА ДО</div>
-                <div class="card-expiry">09/28</div>
-                <div class="card-cvv">
-                  <small>CVV</small>
-                  <span>•••</span>
+              <div class="bank-card-wrap">
+                <div class="bank-card" id="bankCardBox">
+                  <div class="card-brand">TravelGo</div>
+                  <div class="card-system" id="cardSystemLabel">VISA / MC</div>
+                  <div class="card-chip" aria-hidden="true"></div>
+
+                  <label class="card-number-label" for="cardNumber">НОМЕР КАРТКИ</label>
+                  <input class="card-number card-input card-number-input" id="cardNumber" name="cardNumber" type="text" inputmode="numeric" placeholder="0000 0000 0000 0000" maxlength="19" autocomplete="cc-number">
+
+                  <label class="card-holder-label" for="cardHolder">ВЛАСНИК КАРТКИ</label>
+                  <input class="card-holder card-input card-holder-input" id="cardHolder" name="cardHolder" type="text" placeholder="ANDRIY KOVAL" autocomplete="cc-name">
+
+                  <label class="card-expiry-label" for="cardExpiry">ДІЙСНА ДО</label>
+                  <input class="card-expiry card-input card-expiry-input" id="cardExpiry" name="cardExpiry" type="text" inputmode="numeric" placeholder="MM/РР" maxlength="5" autocomplete="cc-exp">
+
+                  <div class="card-cvv">
+                    <label for="cardCvv"><small>CVV</small></label>
+                    <input class="card-input card-cvv-input" id="cardCvv" name="cardCvv" type="password" inputmode="numeric" placeholder="•••" maxlength="3" autocomplete="cc-csc">
+                  </div>
                 </div>
+                <p class="field-error mt-2" id="cardPaymentError" hidden>Перевірте правильність заповнення даних банківської картки</p>
               </div>
 
               <div class="secure-col">
